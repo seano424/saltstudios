@@ -6,7 +6,6 @@ export default function DashboardLayout({
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}
-      <nav>I am the site nav!</nav>
 
       {children}
     </section>

@@ -22,6 +22,7 @@ const config: Config = {
     extend: {
       colors: {
         'theme-orange': '#F15A31',
+        'theme-soft-peach': '#FBF5EA',
       },
     },
   },
