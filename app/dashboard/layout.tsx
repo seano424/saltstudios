@@ -1,3 +1,5 @@
+import Navbar from './components/Navbar'
+
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
@@ -6,9 +8,7 @@ export default function DashboardLayout({
   return (
     <section className='flex min-h-screen flex-col scroll-smooth'>
       {/* Include shared UI here e.g. a header or sidebar */}
-      <nav className='fixed inset-x-0 h-32 border-8 border-blue-300'>
-        I am the dashboard nav!
-      </nav>
+      <Navbar />
 
       <div className='fixed left-0 top-32 h-40 w-80 overflow-scroll border-8 border-purple-300'></div>
       <div className='fixed bottom-0 left-0 top-72 w-80 overflow-scroll border-8 border-yellow-300'>
