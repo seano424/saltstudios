@@ -7,14 +7,23 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    debugScreens: {
+      position: ['bottom', 'right'],
+      style: {
+        backgroundColor: '#C0FFEE',
+        color: 'black',
+        fontSize: '1rem',
+      },
+    },
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial':
+          'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-debug-screens')],
 }
 export default config
