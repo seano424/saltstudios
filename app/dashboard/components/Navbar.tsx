@@ -2,6 +2,10 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 import { League_Spartan } from 'next/font/google'
+import {
+  UserButton,
+  SignUpButton,
+} from '@clerk/nextjs'
 
 const leagueSpartan = League_Spartan({
   subsets: ['latin'],
@@ -24,7 +28,7 @@ export default function Navbar() {
           <span
             className={clsx(
               leagueSpartan.className,
-              'ml-2 text-2xl font-bold text-gray-900 uppercase tracking-tighter'
+              'ml-2 text-2xl font-bold uppercase tracking-tighter text-gray-900'
             )}
           >
             salt studios. design
@@ -32,12 +36,18 @@ export default function Navbar() {
         </Link>
       </div>
       <div className='container flex h-full w-full items-center border-8 border-purple-700'>
-        <Link
+        {/* <Link
           className='rounded bg-gray-50 px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-100'
           href='/'
         >
           Login
-        </Link>
+        </Link> */}
+
+        <SignUpButton mode='modal'>
+          <button>Sign up</button>
+        </SignUpButton>
+        
+        <UserButton afterSignOutUrl='/' />
       </div>
     </nav>
   )
