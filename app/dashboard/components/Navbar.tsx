@@ -18,13 +18,13 @@ export default function Navbar() {
           <Image
             src={'/images/logo.svg'}
             alt='Logo'
-            height={100}
-            width={100}
+            height={90}
+            width={90}
           />
           <span
             className={clsx(
               leagueSpartan.className,
-              'text-3xl font-black text-gray-900'
+              'ml-2 text-3xl font-black text-gray-900'
             )}
           >
             Salt Studios
