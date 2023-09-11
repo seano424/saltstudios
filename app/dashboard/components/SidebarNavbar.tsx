@@ -12,9 +12,10 @@ export default function SidebarNavbar() {
       <Link
         href={'/dashboard'}
         className={clsx(
-          'flex items-center gap-1 rounded px-4 py-3',
-          pathname === '/dashboard' &&
-            'bg-gray-50'
+          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 ease-in-out hover:bg-gray-50 focus:bg-gray-50',
+          pathname === '/dashboard'
+            ? 'bg-gray-50 font-bold'
+            : 'font-medium'
         )}
       >
         <svg
@@ -37,16 +38,16 @@ export default function SidebarNavbar() {
           <path d='M10 4l4 16'></path>
           <path d='M12 12l-8 2'></path>
         </svg>
-        <span className='font-medium'>
-          Dashboard
-        </span>
+        <span>Dashboard</span>
       </Link>
       <Link
-        href={'/dashboard'}
+        href={'/dashboard/saved-components'}
         className={clsx(
-          'flex items-center gap-1 rounded px-4 py-3',
-          pathname === '/dashboard/folders' &&
-            'bg-gray-50'
+          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50',
+          pathname ===
+            '/dashboard/saved-components'
+            ? 'bg-gray-50 font-bold'
+            : 'font-medium'
         )}
       >
         <svg
@@ -66,9 +67,7 @@ export default function SidebarNavbar() {
           <path d='M12 12l0 .01'></path>
           <path d='M3 13a20 20 0 0 0 18 0'></path>
         </svg>
-        <span className='font-medium'>
-          Saved Components
-        </span>
+        <span>Saved Components</span>
       </Link>
     </div>
   )
