@@ -21,7 +21,7 @@ export default function Page() {
           src={
             '/images/christina-deravedisian-2-unsplash.jpg'
           }
-          alt='Axel Eres on Unsplash'
+          alt='Christina Deravedisian on Unsplash'
           layout='fill'
         />
       </div>
