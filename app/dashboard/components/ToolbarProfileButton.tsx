@@ -95,7 +95,7 @@ export default function ToolbarProfileButton() {
               alt='Profile'
               height={50}
               width={50}
-              className='rounded-full'
+              className='w-[50px]] h-[50px] rounded-full object-cover'
             />
           )}
           <div className='absolute inset-0 rounded-full'></div>
