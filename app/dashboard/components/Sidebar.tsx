@@ -78,7 +78,7 @@ const components = [
 export default function Sidebar() {
   const pathname = usePathname()
   return (
-    <div className='from-theme-orange/80 container fixed bottom-0 left-0 top-72 flex w-80 flex-col gap-2 overflow-scroll border-8 border-yellow-300'>
+    <div className='container fixed bottom-0 left-0 top-72 flex w-80 flex-col gap-2 overflow-scroll from-theme-orange/80'>
       <h4 className='mt-3 text-lg uppercase text-slate-700'>
         Components Catalog
       </h4>

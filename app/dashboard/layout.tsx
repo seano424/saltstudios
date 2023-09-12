@@ -15,7 +15,7 @@ export default function DashboardLayout({
       <Navbar />
       <SidebarNavbar />
       <Sidebar />
-      <main className='container relative top-32 ml-80 min-h-screen border-8 border-green-300'>
+      <main className='container relative top-36 ml-80 min-h-screen bg-gray-50'>
         {children}
       </main>
     </section>
