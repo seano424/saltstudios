@@ -15,8 +15,10 @@ export default function DashboardLayout({
       <Navbar />
       <SidebarNavbar />
       <Sidebar />
-      <main className='container relative top-36 ml-80 min-h-screen bg-gray-50'>
-        {children}
+      <main className='relative top-36 min-h-screen bg-gray-50 lg:container lg:ml-80'>
+        <div className='container lg:px-0'>
+          {children}
+        </div>
       </main>
     </section>
   )

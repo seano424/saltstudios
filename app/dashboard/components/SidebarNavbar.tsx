@@ -8,7 +8,7 @@ export default function SidebarNavbar() {
   const pathname = usePathname()
 
   return (
-    <div className='container fixed left-0 top-36 flex h-36 w-80 flex-col justify-center gap-1 overflow-scroll'>
+    <div className='container fixed left-0 top-36 hidden h-36 w-80 flex-col justify-center gap-1 overflow-scroll lg:flex'>
       <Link
         href={'/dashboard'}
         className={clsx(
