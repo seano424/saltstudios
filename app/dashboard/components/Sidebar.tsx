@@ -103,7 +103,7 @@ export default function Sidebar() {
               stroke='currentColor'
               fill='none'
               stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeLinejoin='round'
             >
               <path
                 stroke='none'
