@@ -6,6 +6,7 @@ import {
   UserButton,
   SignUpButton,
   SignedOut,
+  SignedIn,
 } from '@clerk/nextjs'
 
 const leagueSpartan = League_Spartan({
@@ -44,8 +45,11 @@ export default function Navbar() {
             </button>
           </SignUpButton>
         </SignedOut>
-
-        <UserButton afterSignOutUrl='/' />
+        <SignedIn>
+          <div className='flex w-full items-center justify-end'>
+            <UserButton afterSignOutUrl='/' />
+          </div>
+        </SignedIn>
       </div>
     </nav>
   )
