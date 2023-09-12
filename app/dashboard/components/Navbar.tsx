@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,6 +9,7 @@ import {
   SignUpButton,
   SignedOut,
   SignedIn,
+  useUser,
 } from '@clerk/nextjs'
 
 const leagueSpartan = League_Spartan({
@@ -14,6 +17,8 @@ const leagueSpartan = League_Spartan({
 })
 
 export default function Navbar() {
+  const { user } = useUser()
+
   return (
     <nav className='fixed inset-x-0 z-50 flex h-36 bg-white'>
       <div className='container relative flex h-full w-80 flex-shrink-0 items-center'>
@@ -47,7 +52,18 @@ export default function Navbar() {
         </SignedOut>
         <SignedIn>
           <div className='flex w-full items-center justify-end'>
-            <UserButton afterSignOutUrl='/' />
+            <button className='flex items-center gap-2'>
+              {user?.imageUrl && (
+                <Image
+                  src={user.imageUrl}
+                  alt='Profile'
+                  height={50}
+                  width={50}
+                  className='rounded-full'
+                />
+              )}
+              <span>{user?.fullName}</span>
+            </button>
           </div>
         </SignedIn>
       </div>
