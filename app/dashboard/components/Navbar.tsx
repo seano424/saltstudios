@@ -5,6 +5,7 @@ import { League_Spartan } from 'next/font/google'
 import {
   UserButton,
   SignUpButton,
+  SignedOut,
 } from '@clerk/nextjs'
 
 const leagueSpartan = League_Spartan({
@@ -36,11 +37,13 @@ export default function Navbar() {
         </Link>
       </div>
       <div className='container flex h-full w-full items-center'>
-        <SignUpButton mode='modal'>
-          <button className='rounded px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-50'>
-            Login
-          </button>
-        </SignUpButton>
+        <SignedOut>
+          <SignUpButton mode='modal'>
+            <button className='rounded px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-50'>
+              Login
+            </button>
+          </SignUpButton>
+        </SignedOut>
 
         <UserButton afterSignOutUrl='/' />
       </div>
