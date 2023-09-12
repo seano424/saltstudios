@@ -24,6 +24,7 @@ const config: Config = {
         'theme-orange': '#F15A31',
         'theme-orange-light': '#f07167',
         'theme-soft-peach': '#FBF5EA',
+        'theme-pink': '#FF0096',
       },
     },
   },

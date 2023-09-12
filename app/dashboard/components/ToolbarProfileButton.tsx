@@ -14,8 +14,11 @@ import {
 } from '@clerk/nextjs'
 import clsx from 'clsx'
 
+import { useSettingsStore } from '@/store/zustand'
+
 export default function ToolbarProfileButton() {
   const { user } = useUser()
+  const { setActiveTab } = useSettingsStore()
   const [showProfileMenu, setShowProfileMenu] =
     useState(false)
   const dropdownRef =
@@ -58,6 +61,19 @@ export default function ToolbarProfileButton() {
       )
     }
   }, [])
+
+  const handleClick = (
+    string:
+      | 'Account Settings'
+      | 'Overview'
+      | 'Payment Info'
+      | ''
+  ) => {
+    if (string !== '') {
+      setActiveTab(string)
+    }
+    setShowProfileMenu(false)
+  }
 
   return (
     <div ref={dropdownRef} className='relative'>
@@ -110,32 +126,41 @@ export default function ToolbarProfileButton() {
       {showProfileMenu && (
         <div className='absolute flex w-full flex-col justify-start gap-3 rounded-b-xl bg-white px-3 pb-10 pt-5'>
           <Link
+            onClick={() =>
+              handleClick('Overview')
+            }
             className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
             href='/dashboard/settings'
           >
-            Profile
+            Overview
           </Link>
           <Link
+            onClick={() =>
+              handleClick('Account Settings')
+            }
             className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
             href='/dashboard/settings'
           >
-            Settings
+            Account Settings
           </Link>
           <Link
-            className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
-            href='/dashboard/settings'
-          >
-            Pricing
-          </Link>
-          <Link
+            onClick={() =>
+              handleClick('Payment Info')
+            }
             className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
             href='/dashboard/settings'
           >
             Payment Info
           </Link>
-
+          <Link
+            onClick={() => handleClick('')}
+            className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
+            href='/dashboard/settings'
+          >
+            Pricing
+          </Link>
           <SignOutButton>
-            <button className='flex justify-start rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'>
+            <button className='hover:bg-theme-orange-light focus:bg-theme-orange-light flex justify-start rounded bg-red-400 px-3 py-1 text-white transition-colors duration-200 ease-in-out'>
               Logout
             </button>
           </SignOutButton>

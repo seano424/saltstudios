@@ -1,60 +1,62 @@
 'use client'
 
 import clsx from 'clsx'
+import { useEffect } from 'react'
 import { UserProfile } from '@clerk/nextjs'
-import { useState } from 'react'
+import { useSettingsStore } from '@/store/zustand'
 
 export default function page() {
-  const [active, setActive] = useState<
-    | 'Overview'
-    | 'Account Settings'
-    | 'Payment Method'
-  >('Account Settings')
+  const { activeTab, setActiveTab } =
+    useSettingsStore()
 
   return (
     <div className='flex flex-col items-center justify-center gap-4 lg:items-start lg:px-5'>
       <div className='flex items-center gap-5'>
         <button
-          onClick={() => setActive('Overview')}
+          onClick={() => setActiveTab('Overview')}
           className={clsx(
-            'rounded bg-white px-4 py-2',
-            active === 'Overview' && 'bg-gray-200'
+            'rounded px-4 py-2',
+            activeTab === 'Overview'
+              ? 'bg-gray-200'
+              : 'bg-white'
           )}
         >
           Overview
         </button>
         <button
           onClick={() =>
-            setActive('Account Settings')
+            setActiveTab('Account Settings')
           }
           className={clsx(
-            'rounded bg-white px-4 py-2',
-            active === 'Account Settings' &&
-              'bg-gray-200'
+            'rounded px-4 py-2',
+            activeTab === 'Account Settings'
+              ? 'bg-gray-200'
+              : 'bg-white'
           )}
         >
           Account Settings
         </button>
         <button
           onClick={() =>
-            setActive('Payment Method')
+            setActiveTab('Payment Info')
           }
           className={clsx(
-            'rounded bg-white px-4 py-2',
-            active === 'Payment Method' &&
-              'bg-gray-200'
+            'rounded px-4 py-2',
+            activeTab === 'Payment Info'
+              ? 'bg-gray-200'
+              : 'bg-white'
           )}
         >
-          Payment Method
+          Payment Info
         </button>
       </div>
-      {active === 'Overview' && (
+      {activeTab === 'Overview' && (
         <div className='h-[400px] w-2/3 rounded-2xl bg-white shadow-2xl'></div>
       )}
-      {active === 'Account Settings' && (
+      {activeTab === 'Account Settings' && (
         <UserProfile />
       )}
-      {active === 'Payment Method' && (
+      {activeTab === 'Payment Info' && (
         <div className='h-[400px] w-2/3 rounded-2xl bg-white shadow-2xl'></div>
       )}
     </div>

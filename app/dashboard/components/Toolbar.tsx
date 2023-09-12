@@ -40,7 +40,7 @@ export default function Toolbar() {
               Docs
             </Link>
             <Link
-              className='text-[#FF0096]'
+              className='text-theme-pink'
               href='/dashboard'
             >
               Go Pro
