@@ -13,7 +13,7 @@ export default function DashboardLayout({
       <SidebarNavbar />
       <Sidebar />
       <main className='relative top-36 min-h-screen bg-gray-50  lg:ml-80'>
-        <div className='container'>
+        <div className='container py-5'>
           {children}
         </div>
       </main>
