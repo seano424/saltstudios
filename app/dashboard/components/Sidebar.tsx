@@ -88,7 +88,7 @@ export default function Sidebar() {
             key={name}
             href={href}
             className={clsx(
-              'flex items-center justify-between px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100',
+              'flex items-center justify-between rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100',
               pathname === href
                 ? 'bg-gray-100 font-bold text-slate-900'
                 : 'text-slate-700'

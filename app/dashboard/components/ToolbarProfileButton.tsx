@@ -2,7 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import {
+  useState,
+  useRef,
+  useEffect,
+} from 'react'
 
 import {
   useUser,
@@ -14,15 +18,44 @@ export default function ToolbarProfileButton() {
   const { user } = useUser()
   const [showProfileMenu, setShowProfileMenu] =
     useState(false)
+  const dropdownRef =
+    useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    const handler = (event: any) => {
+      if (!dropdownRef.current) {
+        return
+      }
+      if (
+        !dropdownRef.current.contains(
+          event.target
+        )
+      ) {
+        setShowProfileMenu(false)
+      }
+    }
+    // the key is using the `true` option
+    // `true` will enable the `capture` phase of event handling by browser
+    document.addEventListener(
+      'click',
+      handler,
+      true
+    )
+    return () => {
+      document.removeEventListener(
+        'click',
+        handler
+      )
+    }
+  }, [])
 
   return (
-    <div className='relative'>
+    <div ref={dropdownRef} className='relative'>
       <button
         className={clsx(
           'flex items-center gap-2 rounded-t-xl px-4 py-1',
           showProfileMenu && 'bg-gray-50'
         )}
-        onFocus={() => setShowProfileMenu(true)}
         onClick={() =>
           setShowProfileMenu(
             (prevState) => !prevState
@@ -65,14 +98,34 @@ export default function ToolbarProfileButton() {
       </button>
 
       {showProfileMenu && (
-        <div className='absolute flex w-full flex-col justify-start gap-3 rounded-b-xl bg-white px-4 pb-10 pt-5'>
-          <Link href='/'>Profile</Link>
-          <Link href='/'>Settings</Link>
-          <Link href='/'>Pricing</Link>
-          <Link href='/'>Payment Info</Link>
+        <div className='absolute flex w-full flex-col justify-start gap-3 rounded-b-xl bg-white px-3 pb-10 pt-5'>
+          <Link
+            className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
+            href='/dashboard/settings'
+          >
+            Profile
+          </Link>
+          <Link
+            className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
+            href='/dashboard/settings'
+          >
+            Settings
+          </Link>
+          <Link
+            className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
+            href='/dashboard/settings'
+          >
+            Pricing
+          </Link>
+          <Link
+            className='rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'
+            href='/dashboard/settings'
+          >
+            Payment Info
+          </Link>
 
           <SignOutButton>
-            <button className='flex justify-start'>
+            <button className='flex justify-start rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100'>
               Logout
             </button>
           </SignOutButton>
