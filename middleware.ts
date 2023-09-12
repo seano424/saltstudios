@@ -11,5 +11,6 @@ export const config = {
   matcher: [
     '/((?!.*\\..*|_next).*)',
     '/(api|trpc)(.*)',
+    '/dashboard/settings/[[...settings]]',
   ],
 }
