@@ -18,7 +18,9 @@ export default function DashboardLayout({
       {/* max-width: calc(100vw - 5rem); */}
       {/* "w-[calc(100%+2rem)]"" */}
       <main className='relative top-36 min-h-screen bg-gray-50  lg:ml-80'>
-        {children}
+        <div className='container'>
+          {children}
+        </div>
       </main>
     </section>
   )
