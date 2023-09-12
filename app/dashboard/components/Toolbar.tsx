@@ -1,17 +1,13 @@
-'use client'
-
-import Image from 'next/image'
 import Link from 'next/link'
 
 import {
   SignUpButton,
   SignedOut,
   SignedIn,
-  useUser,
 } from '@clerk/nextjs'
+import ToolbarProfileButton from './ToolbarProfileButton'
 
 export default function Toolbar() {
-  const { user } = useUser()
   return (
     <div className='container flex h-full w-full items-center'>
       <div className='flex w-full items-center justify-between'>
@@ -64,36 +60,7 @@ export default function Toolbar() {
         {/* Right Side */}
         <div className='hidden items-center gap-6 lg:flex'>
           <SignedIn>
-            <button className='flex items-center gap-2'>
-              {user?.imageUrl && (
-                <Image
-                  src={user.imageUrl}
-                  alt='Profile'
-                  height={50}
-                  width={50}
-                  className='rounded-full'
-                />
-              )}
-              <span>{user?.fullName}</span>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                strokeWidth='2'
-                stroke='currentColor'
-                fill='none'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              >
-                <path
-                  stroke='none'
-                  d='M0 0h24v24H0z'
-                  fill='none'
-                ></path>
-                <path d='M6 9l6 6l6 -6'></path>
-              </svg>
-            </button>
+            <ToolbarProfileButton />
           </SignedIn>
           <Link href='/components'>
             Components
