@@ -10,7 +10,7 @@ import FocusTrap from 'focus-trap-react'
 
 export default function SearchModal() {
   const [isModalOpen, setIsModalOpen] =
-    useState(true)
+    useState(false)
   const modalRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function SearchModal() {
           <div className='fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm'>
             <div
               ref={modalRef}
-              className='h-72 w-1/2 rounded-xl bg-white py-5'
+              className='h-72 w-5/6 rounded-xl bg-white py-5 lg:w-1/2'
             >
               <div className='flex items-center justify-between border-b border-gray-100 px-5 pb-3'>
                 <div className='flex items-center gap-2'>
