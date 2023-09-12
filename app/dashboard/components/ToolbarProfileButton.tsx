@@ -41,9 +41,19 @@ export default function ToolbarProfileButton() {
       handler,
       true
     )
+
+    document.addEventListener(
+      'focus',
+      handler,
+      true
+    )
     return () => {
       document.removeEventListener(
         'click',
+        handler
+      )
+      document.removeEventListener(
+        'focus',
         handler
       )
     }
