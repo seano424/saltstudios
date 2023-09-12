@@ -15,7 +15,9 @@ export default function DashboardLayout({
       <Navbar />
       <SidebarNavbar />
       <Sidebar />
-      <main className='relative top-36 min-h-screen bg-gray-50 lg:container lg:ml-80'>
+      {/* max-width: calc(100vw - 5rem); */}
+      {/* "w-[calc(100%+2rem)]"" */}
+      <main className='relative top-36 min-h-screen bg-gray-50  lg:ml-80'>
         {children}
       </main>
     </section>
