@@ -12,10 +12,10 @@ export default function Toolbar() {
     <div className='container flex h-full w-full items-center'>
       <div className='flex w-full items-center justify-between'>
         {/* Left Side */}
-        <div>
+        <div className='flex items-center gap-3'>
           <SignedOut>
             <SignUpButton mode='modal'>
-              <button className='rounded px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-50'>
+              <button className='rounded bg-gray-100 px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-50'>
                 Login
               </button>
             </SignUpButton>
