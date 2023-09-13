@@ -12,8 +12,8 @@ export default function DashboardLayout({
       <Navbar />
       <SidebarNavbar />
       <Sidebar />
-      <main className='relative top-36 min-h-screen bg-gray-50 dark:bg-black dark:text-theme-soft-peach lg:ml-80'>
-        <div className='container py-5'>
+      <main className='relative top-36 min-h-screen bg-gray-50 dark:bg-theme-dark dark:text-theme-soft-peach lg:ml-80'>
+        <div className='container'>
           {children}
         </div>
       </main>

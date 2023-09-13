@@ -88,9 +88,9 @@ export default function Sidebar() {
             key={name}
             href={href}
             className={clsx(
-              'flex items-center justify-between rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-blue-700 dark:focus:bg-blue-700',
+              'flex items-center justify-between rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-blue-50/50 focus:bg-blue-50/50 dark:hover:bg-sky-500 dark:focus:bg-sky-500 lg:text-sm',
               pathname === href
-                ? 'bg-gray-100 font-bold text-slate-900 dark:bg-blue-700 dark:text-theme-soft-peach'
+                ? 'bg-blue-50/50 font-bold text-sky-500 dark:bg-sky-400/10 dark:text-sky-400'
                 : 'text-slate-700 dark:text-white'
             )}
           >

@@ -82,7 +82,7 @@ export default function ToolbarProfileButton() {
         className={clsx(
           'flex items-center gap-2 rounded-t-xl px-4 py-1',
           showProfileMenu &&
-            'bg-gray-50 dark:bg-black'
+            'dark:bg-theme-dark bg-gray-50'
         )}
         onClick={() =>
           setShowProfileMenu(
@@ -126,12 +126,12 @@ export default function ToolbarProfileButton() {
       </button>
 
       {showProfileMenu && (
-        <div className='absolute flex w-full flex-col justify-start gap-3 rounded-b-xl bg-white px-3 pb-10 pt-5 dark:bg-black'>
+        <div className='dark:bg-theme-dark absolute flex w-full flex-col justify-start gap-3 rounded-b-xl bg-white px-3 pb-10 pt-5 filter backdrop-blur-2xl'>
           <Link
             onClick={() =>
               handleClick('Overview')
             }
-            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:hover:bg-blue-700 dark:focus:bg-blue-700'
+            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-theme-soft-peach dark:hover:bg-sky-400 dark:focus:bg-sky-400'
             href='/dashboard/settings'
           >
             Overview
@@ -140,7 +140,7 @@ export default function ToolbarProfileButton() {
             onClick={() =>
               handleClick('Account Settings')
             }
-            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:hover:bg-blue-700 dark:focus:bg-blue-700'
+            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-theme-soft-peach dark:hover:bg-sky-400 dark:focus:bg-sky-400'
             href='/dashboard/settings'
           >
             Account Settings
@@ -149,20 +149,20 @@ export default function ToolbarProfileButton() {
             onClick={() =>
               handleClick('Payment Info')
             }
-            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:hover:bg-blue-700 dark:focus:bg-blue-700'
+            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-theme-soft-peach dark:hover:bg-sky-400 dark:focus:bg-sky-400'
             href='/dashboard/settings'
           >
             Payment Info
           </Link>
           <Link
             onClick={() => handleClick('')}
-            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:hover:bg-blue-700 dark:focus:bg-blue-700'
+            className='rounded px-3 py-1 ring-0 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:text-theme-soft-peach dark:hover:bg-sky-400 dark:focus:bg-sky-400'
             href='/dashboard/settings'
           >
             Pricing
           </Link>
           <SignOutButton>
-            <button className='hover:bg-theme-orange-light focus:bg-theme-orange-light flex justify-start rounded bg-red-400 px-3 py-1 text-white transition-colors duration-200 ease-in-out'>
+            <button className='flex justify-start rounded px-3  py-1 text-sky-400 transition-colors duration-200 ease-in-out'>
               Logout
             </button>
           </SignOutButton>

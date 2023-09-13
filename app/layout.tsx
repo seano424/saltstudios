@@ -32,7 +32,7 @@ export default function RootLayout({
         <body
           className={clsx(
             inter.className,
-            'dark:bg-black',
+            'dark:bg-theme-dark',
             devMode && 'debug-screens'
           )}
         >

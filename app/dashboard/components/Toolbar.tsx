@@ -41,7 +41,7 @@ export default function Toolbar() {
               Docs
             </Link>
             <Link
-              className='text-theme-pink'
+              className='text-theme-pink dark:text-sky-400'
               href='/dashboard'
             >
               Go Pro

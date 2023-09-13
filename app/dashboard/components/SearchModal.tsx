@@ -59,7 +59,7 @@ export default function SearchModal() {
 
   return (
     <>
-      <div className='pointer-events-auto relative bg-white dark:bg-black'>
+      <div className='pointer-events-auto relative'>
         <button
           onClick={() =>
             setIsModalOpen(
@@ -94,17 +94,17 @@ export default function SearchModal() {
             ></circle>
           </svg>
           Quick search...
-          <span className='ml-auto flex-none pl-3 text-xs font-semibold'>
+          <span className='ml-auto flex-none pl-8 text-xs font-semibold'>
             ⌘K
           </span>
         </button>
       </div>
       {isModalOpen && (
         <FocusTrap>
-          <div className='fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm dark:bg-black/90'>
+          <div className='fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm dark:bg-theme-dark/90'>
             <div
               ref={modalRef}
-              className='h-72 w-5/6 rounded-xl bg-white py-5 dark:border-2 dark:border-theme-soft-peach dark:bg-black lg:w-1/2'
+              className='h-72 w-5/6 rounded-xl bg-white py-5 dark:border-2 dark:border-theme-soft-peach dark:bg-theme-dark lg:w-1/2'
             >
               <div className='flex items-center justify-between gap-4 border-b border-gray-100 px-5 pb-3 dark:border-theme-soft-peach'>
                 <div className='flex flex-1 items-center gap-2'>
@@ -129,7 +129,7 @@ export default function SearchModal() {
                   </svg>
                   <input
                     autoFocus
-                    className='w-full rounded focus:outline-none dark:bg-black dark:text-theme-soft-peach dark:placeholder:text-theme-soft-peach'
+                    className='w-full rounded focus:outline-none dark:bg-theme-dark dark:text-theme-soft-peach dark:placeholder:text-theme-soft-peach'
                     placeholder='Search documentation'
                     type='text'
                   />
