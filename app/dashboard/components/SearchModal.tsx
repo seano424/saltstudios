@@ -60,14 +60,15 @@ export default function Modal() {
     <>
       {isModalOpen && (
         <FocusTrap>
-          <div className='dark:bg-theme-dark/90 fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm'>
+          <div className='dark:bg-theme-dark/10 fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-20 filter backdrop-blur-sm lg:pt-40'>
             <div
               ref={modalRef}
-              className='dark:bg-theme-dark h-72 w-5/6 rounded-xl bg-white py-5 dark:border-2 dark:border-theme-soft-peach lg:w-1/2'
+              className='dark:bg-theme-dark-10 h-72 w-11/12 rounded-lg bg-white py-3 lg:w-1/2'
             >
-              <div className='flex items-center justify-between gap-4 border-b border-gray-100 px-5 pb-3 dark:border-theme-soft-peach'>
+              <div className='flex items-center justify-between gap-4 border-b border-gray-100 px-5 pb-3 dark:border-gray-600'>
                 <div className='flex flex-1 items-center gap-2'>
                   <svg
+                    className='dark:text-gray-200'
                     xmlns='http://www.w3.org/2000/svg'
                     width='24'
                     height='24'
@@ -88,7 +89,7 @@ export default function Modal() {
                   </svg>
                   <input
                     autoFocus
-                    className='dark:bg-theme-dark w-full rounded focus:outline-none dark:text-theme-soft-peach dark:placeholder:text-theme-soft-peach'
+                    className='w-full rounded focus:outline-none dark:bg-transparent dark:text-gray-400'
                     placeholder='Search documentation'
                     type='text'
                   />
@@ -97,7 +98,7 @@ export default function Modal() {
                   onClick={() =>
                     setIsModalOpen(false)
                   }
-                  className='rounded-md border border-gray-100 p-3 text-[10px] shadow-sm transition-all duration-300 ease-in-out hover:bg-gray-50'
+                  className='rounded-md border p-2 text-[10px] shadow-lg transition-all duration-300 ease-in-out hover:bg-gray-50 dark:bg-gray-600 dark:text-gray-400'
                 >
                   ESC
                 </button>
