@@ -7,13 +7,33 @@ import {
   useRef,
 } from 'react'
 
+import { useTheme } from 'next-themes'
+
 export default function DarkModeButton() {
   const [showDarkModeMenu, setShowDarkModeMenu] =
     useState(false)
   const dropdownRef =
     useRef<HTMLInputElement>(null)
 
+  const { theme, setTheme } = useTheme()
+
   useEffect(() => {
+    // if (
+    //   localStorage.theme === 'dark' ||
+    //   (!('theme' in localStorage) &&
+    //     window.matchMedia(
+    //       '(prefers-color-scheme: dark)'
+    //     ).matches)
+    // ) {
+    //   document.documentElement.classList.add(
+    //     'dark'
+    //   )
+    // } else {
+    //   document.documentElement.classList.remove(
+    //     'dark'
+    //   )
+    // }
+
     const handler = (event: any) => {
       if (!dropdownRef.current) {
         return
@@ -51,8 +71,18 @@ export default function DarkModeButton() {
     }
   }, [])
 
-  const handleClick = () => {
-    setShowDarkModeMenu(false)
+  const handleClick = (
+    string: 'light' | 'dark' | 'system'
+  ) => {
+    if (string === 'light') {
+      setTheme('light')
+    }
+    if (string === 'dark') {
+      setTheme('dark')
+    }
+    if (string === 'system') {
+      setTheme('system')
+    }
   }
 
   return (
@@ -96,8 +126,12 @@ export default function DarkModeButton() {
       {showDarkModeMenu && (
         <div className='absolute right-5 mt-4 flex w-40 flex-col items-start justify-start rounded-xl rounded-b-xl border bg-white dark:bg-black'>
           <button
+            onClick={() => handleClick('light')}
             className={clsx(
-              'flex w-full items-center gap-3 bg-blue-50/50 px-3 py-2 dark:bg-blue-50/10'
+              'flex w-full items-center gap-3 px-3 py-2',
+              theme === 'light'
+                ? 'bg-blue-50/50 dark:bg-blue-50/10'
+                : ''
             )}
           >
             <svg
@@ -129,8 +163,12 @@ export default function DarkModeButton() {
             Light
           </button>
           <button
+            onClick={() => handleClick('dark')}
             className={clsx(
-              'flex w-full items-center gap-3 bg-blue-50/50 px-3 py-2 dark:bg-blue-50/10'
+              'flex w-full items-center gap-3 px-3 py-2',
+              theme === 'dark'
+                ? 'bg-blue-50/50 dark:bg-blue-700'
+                : ''
             )}
           >
             <svg
@@ -156,8 +194,12 @@ export default function DarkModeButton() {
             Dark
           </button>
           <button
+            onClick={() => handleClick('system')}
             className={clsx(
-              'flex w-full items-center gap-3 bg-blue-50/50 px-3 py-2 dark:bg-blue-50/10'
+              'flex w-full items-center gap-3 px-3 py-2',
+              theme === 'system'
+                ? 'bg-blue-50/50 dark:bg-blue-50/10'
+                : ''
             )}
           >
             <svg
