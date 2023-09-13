@@ -11,7 +11,7 @@ const leagueSpartan = League_Spartan({
 
 export default function Navbar() {
   return (
-    <nav className='fixed inset-x-0 z-40 flex h-36 bg-white dark:bg-black dark:text-white'>
+    <nav className='fixed inset-x-0 z-40 flex h-36 bg-white dark:bg-black dark:text-theme-soft-peach'>
       <div className='container relative flex h-full w-80 flex-shrink-0 items-center'>
         <Link
           className='flex items-center justify-center gap-2'
