@@ -59,7 +59,7 @@ export default function SearchModal() {
 
   return (
     <>
-      <div className='pointer-events-auto relative bg-white dark:bg-slate-900'>
+      <div className='pointer-events-auto relative bg-white dark:bg-black'>
         <button
           onClick={() =>
             setIsModalOpen(
@@ -101,13 +101,13 @@ export default function SearchModal() {
       </div>
       {isModalOpen && (
         <FocusTrap>
-          <div className='fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm'>
+          <div className='fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm dark:bg-black/90'>
             <div
               ref={modalRef}
-              className='h-72 w-5/6 rounded-xl bg-white py-5 lg:w-1/2'
+              className='h-72 w-5/6 rounded-xl bg-white py-5 dark:border-2 dark:border-theme-soft-peach dark:bg-black lg:w-1/2'
             >
-              <div className='flex items-center justify-between border-b border-gray-100 px-5 pb-3'>
-                <div className='flex items-center gap-2'>
+              <div className='flex items-center justify-between gap-4 border-b border-gray-100 px-5 pb-3 dark:border-theme-soft-peach'>
+                <div className='flex flex-1 items-center gap-2'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='24'
@@ -129,7 +129,7 @@ export default function SearchModal() {
                   </svg>
                   <input
                     autoFocus
-                    className='w-full focus:outline-none'
+                    className='w-full rounded focus:outline-none dark:bg-black dark:text-theme-soft-peach dark:placeholder:text-theme-soft-peach'
                     placeholder='Search documentation'
                     type='text'
                   />

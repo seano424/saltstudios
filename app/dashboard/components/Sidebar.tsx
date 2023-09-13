@@ -79,7 +79,7 @@ export default function Sidebar() {
   const pathname = usePathname()
   return (
     <div className='container fixed bottom-0 left-0 top-72 hidden w-80 flex-col gap-2 overflow-scroll from-theme-orange/80 lg:flex'>
-      <h4 className='mt-3 text-lg uppercase text-slate-700'>
+      <h4 className='mt-3 text-lg uppercase text-slate-700 dark:text-theme-soft-peach'>
         Components Catalog
       </h4>
       <div className='flex flex-col gap-2'>
@@ -88,10 +88,10 @@ export default function Sidebar() {
             key={name}
             href={href}
             className={clsx(
-              'flex items-center justify-between rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100',
+              'flex items-center justify-between rounded px-3 py-1 transition-colors duration-200 ease-in-out hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-blue-700 dark:focus:bg-blue-700',
               pathname === href
-                ? 'bg-gray-100 font-bold text-slate-900'
-                : 'text-slate-700'
+                ? 'bg-gray-100 font-bold text-slate-900 dark:bg-blue-700 dark:text-theme-soft-peach'
+                : 'text-slate-700 dark:text-white'
             )}
           >
             {name}
