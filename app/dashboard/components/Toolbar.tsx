@@ -12,18 +12,21 @@ import DarkModeButton from './DarkModeButton'
 export default function Toolbar() {
   return (
     <>
-      <div className='container flex h-full w-full items-center'>
-        <div className=' flex w-full items-center justify-between'>
+      <div className='flex h-full w-full items-center lg:container'>
+        <div className='flex w-full items-center justify-end lg:justify-between'>
           {/* Left Side */}
-          <div className='flex items-center gap-3'>
+          <div className='mr-5 flex items-center gap-3 lg:mr-0'>
             <SignedOut>
               <SignUpButton mode='modal'>
-                <button className='rounded bg-gray-100 px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-50'>
+                <button className='rounded bg-gray-100 px-3 py-2 text-sm transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:bg-sky-400 dark:font-semibold dark:text-theme-soft-peach'>
                   Login
                 </button>
               </SignUpButton>
             </SignedOut>
             <SearchButton />
+            <span className='lg:hidden'>
+              <DarkModeButton />
+            </span>
           </div>
 
           {/* Right Side */}

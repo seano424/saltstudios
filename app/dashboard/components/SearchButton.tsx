@@ -9,7 +9,7 @@ export default function SearchModal() {
     <button
       onClick={() => toggleModalOpen(isModalOpen)}
       type='button'
-      className='dark:highlight-white/5 pointer-events-auto relative hidden w-full items-center rounded-md py-1.5 pl-2 pr-3 text-sm leading-6 text-slate-400 shadow-sm ring-1 ring-slate-900/10 hover:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 lg:flex'
+      className='dark:highlight-white/5 pointer-events-auto relative w-full items-center rounded-md py-1.5 pl-2 text-sm leading-6 text-slate-400 ring-slate-900/10 hover:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 lg:flex lg:pr-3 lg:shadow-sm lg:ring-1'
     >
       <svg
         width='24'
@@ -35,8 +35,10 @@ export default function SearchModal() {
           strokeLinejoin='round'
         ></circle>
       </svg>
-      Quick search...
-      <span className='ml-auto flex-none pl-8 text-xs font-semibold'>
+      <span className='hidden lg:flex'>
+        Quick search...
+      </span>
+      <span className='ml-auto hidden flex-none pl-8 text-xs font-semibold lg:flex'>
         ⌘K
       </span>
     </button>

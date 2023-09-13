@@ -11,8 +11,8 @@ const leagueSpartan = League_Spartan({
 
 export default function Navbar() {
   return (
-    <nav className='supports-backdrop-blur:bg-white/60 fixed inset-x-0 z-40 flex h-28 bg-white/80 filter backdrop-blur dark:border-slate-50/[0.06] dark:bg-transparent  dark:text-theme-soft-peach lg:border-b lg:border-slate-900/10'>
-      <div className='container relative flex h-full w-80 flex-shrink-0 items-center'>
+    <nav className='supports-backdrop-blur:bg-white/60 fixed inset-x-0 z-40 flex h-28 bg-white/80 filter backdrop-blur dark:border-slate-50/[0.06] dark:bg-transparent dark:text-theme-soft-peach lg:border-b lg:border-slate-900/10'>
+      <div className='relative flex h-full flex-shrink-0 items-center pl-5 lg:container lg:w-80'>
         <Link
           className='flex items-center justify-center gap-2'
           href='/dashboard'

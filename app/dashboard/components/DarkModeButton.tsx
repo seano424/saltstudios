@@ -128,7 +128,7 @@ export default function DarkModeButton() {
           <button
             onClick={() => handleClick('light')}
             className={clsx(
-              'flex w-full items-center gap-3 px-3 py-2 dark:hover:bg-sky-400/50 dark:focus:bg-sky-400/50',
+              'flex w-full items-center gap-3 px-3 py-2 dark:hover:bg-sky-400/50 dark:focus:bg-sky-400',
               theme === 'light'
                 ? 'bg-blue-50/50 dark:bg-blue-50/10'
                 : ''
@@ -165,7 +165,7 @@ export default function DarkModeButton() {
           <button
             onClick={() => handleClick('dark')}
             className={clsx(
-              'flex w-full items-center gap-3 px-3 py-2 dark:hover:bg-sky-400/50 dark:focus:bg-sky-400/50',
+              'flex w-full items-center gap-3 px-3 py-2 dark:hover:bg-sky-400/50 dark:focus:bg-sky-400',
               theme === 'dark'
                 ? 'bg-blue-50/50 dark:bg-sky-400'
                 : ''
@@ -196,7 +196,7 @@ export default function DarkModeButton() {
           <button
             onClick={() => handleClick('system')}
             className={clsx(
-              'flex w-full items-center gap-3 px-3 py-2 dark:hover:bg-sky-400/50 dark:focus:bg-sky-400/50',
+              'flex w-full items-center gap-3 px-3 py-2 dark:hover:bg-sky-400/50 dark:focus:bg-sky-400',
               theme === 'system'
                 ? 'bg-blue-50/50 dark:bg-blue-50/10'
                 : ''
