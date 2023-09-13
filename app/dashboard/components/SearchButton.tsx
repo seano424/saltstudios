@@ -9,7 +9,7 @@ export default function SearchModal() {
     <button
       onClick={() => toggleModalOpen(isModalOpen)}
       type='button'
-      className='dark:highlight-white/5 pointer-events-auto relative w-full items-center rounded-md py-1.5 pl-2 text-sm leading-6 text-slate-400 ring-slate-900/10 hover:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 lg:flex lg:pr-3 lg:shadow-sm lg:ring-1'
+      className='dark:highlight-white/5 pointer-events-auto relative w-full items-center rounded-md pl-2 text-sm leading-6 text-slate-400 ring-slate-900/10 hover:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 lg:flex lg:py-1.5 lg:pr-3 lg:shadow-sm lg:ring-1'
     >
       <svg
         width='24'

@@ -86,8 +86,9 @@ export default function DarkModeButton() {
   }
 
   return (
-    <div className='' ref={dropdownRef}>
+    <div ref={dropdownRef}>
       <button
+        className='flex'
         onClick={() =>
           setShowDarkModeMenu(
             (prevState) => !prevState
