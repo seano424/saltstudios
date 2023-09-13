@@ -1,23 +1,5 @@
 import { create } from 'zustand'
 
-type CartStore = {
-  cart: number
-  add: () => void
-  remove: () => void
-  removeAll: () => void
-}
-
-export const useCartStore = create<CartStore>(
-  (set) => ({
-    cart: 0,
-    add: () =>
-      set((state) => ({ cart: state.cart + 1 })),
-    remove: () =>
-      set((state) => ({ cart: state.cart - 1 })),
-    removeAll: () => set({ cart: 0 }),
-  })
-)
-
 type SettingsStore = {
   activeTab:
     | 'Overview'
@@ -41,3 +23,21 @@ export const useSettingsStore =
         | 'Payment Info'
     ) => set({ activeTab: tab }),
   }))
+
+type modalStore = {
+  isModalOpen: boolean
+  setIsModalOpen: (isOpen: boolean) => void
+  toggleModalOpen: (prevState: boolean) => void
+}
+
+export const useModalStore = create<modalStore>(
+  (set) => ({
+    isModalOpen: false,
+    setIsModalOpen: (boolean: boolean) =>
+      set({ isModalOpen: boolean }),
+    toggleModalOpen: () =>
+      set((state) => ({
+        isModalOpen: !state.isModalOpen,
+      })),
+  })
+)

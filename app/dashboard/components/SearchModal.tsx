@@ -1,16 +1,16 @@
 'use client'
 
-import {
-  useState,
-  useEffect,
-  useRef,
-} from 'react'
-
+import { useRef, useEffect } from 'react'
 import FocusTrap from 'focus-trap-react'
+import { useModalStore } from '@/store/zustand'
 
-export default function SearchModal() {
-  const [isModalOpen, setIsModalOpen] =
-    useState(false)
+export default function Modal() {
+  const {
+    isModalOpen,
+    setIsModalOpen,
+    toggleModalOpen,
+  } = useModalStore()
+
   const modalRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function SearchModal() {
       }
 
       if (event.key === 'k' && event.metaKey) {
-        setIsModalOpen((prevState) => !prevState)
+        toggleModalOpen(isModalOpen)
       }
       if (!modalRef.current) {
         return
@@ -56,55 +56,14 @@ export default function SearchModal() {
       )
     }
   }, [])
-
   return (
     <>
-      <div className='pointer-events-auto relative'>
-        <button
-          onClick={() =>
-            setIsModalOpen(
-              (prevState) => !prevState
-            )
-          }
-          type='button'
-          className='dark:highlight-white/5 hidden w-full items-center rounded-md py-1.5 pl-2 pr-3 text-sm leading-6 text-slate-400 shadow-sm ring-1 ring-slate-900/10 hover:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 lg:flex'
-        >
-          <svg
-            width='24'
-            height='24'
-            fill='none'
-            aria-hidden='true'
-            className='mr-3 flex-none'
-          >
-            <path
-              d='m19 19-3.5-3.5'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-            ></path>
-            <circle
-              cx='11'
-              cy='11'
-              r='6'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-            ></circle>
-          </svg>
-          Quick search...
-          <span className='ml-auto flex-none pl-8 text-xs font-semibold'>
-            ⌘K
-          </span>
-        </button>
-      </div>
       {isModalOpen && (
         <FocusTrap>
-          <div className='fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm dark:bg-theme-dark/90'>
+          <div className='dark:bg-theme-dark/90 fixed inset-0 z-50 flex justify-center bg-gray-400/50 pt-40 filter backdrop-blur-sm'>
             <div
               ref={modalRef}
-              className='h-72 w-5/6 rounded-xl bg-white py-5 dark:border-2 dark:border-theme-soft-peach dark:bg-theme-dark lg:w-1/2'
+              className='dark:bg-theme-dark h-72 w-5/6 rounded-xl bg-white py-5 dark:border-2 dark:border-theme-soft-peach lg:w-1/2'
             >
               <div className='flex items-center justify-between gap-4 border-b border-gray-100 px-5 pb-3 dark:border-theme-soft-peach'>
                 <div className='flex flex-1 items-center gap-2'>
@@ -129,7 +88,7 @@ export default function SearchModal() {
                   </svg>
                   <input
                     autoFocus
-                    className='w-full rounded focus:outline-none dark:bg-theme-dark dark:text-theme-soft-peach dark:placeholder:text-theme-soft-peach'
+                    className='dark:bg-theme-dark w-full rounded focus:outline-none dark:text-theme-soft-peach dark:placeholder:text-theme-soft-peach'
                     placeholder='Search documentation'
                     type='text'
                   />

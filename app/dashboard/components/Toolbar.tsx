@@ -6,7 +6,7 @@ import {
 import Link from 'next/link'
 
 import ToolbarProfileButton from './ToolbarProfileButton'
-import SearchModal from './SearchModal'
+import SearchButton from './SearchButton'
 import DarkModeButton from './DarkModeButton'
 
 export default function Toolbar() {
@@ -23,7 +23,7 @@ export default function Toolbar() {
                 </button>
               </SignUpButton>
             </SignedOut>
-            <SearchModal />
+            <SearchButton />
           </div>
 
           {/* Right Side */}
