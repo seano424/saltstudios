@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 import ToolbarProfileButton from './ToolbarProfileButton'
 import SearchModal from './SearchModal'
+import DarkModeButton from './DarkModeButton'
 
 export default function Toolbar() {
   return (
@@ -45,6 +46,8 @@ export default function Toolbar() {
             >
               Go Pro
             </Link>
+
+            <DarkModeButton />
           </div>
         </div>
       </div>
