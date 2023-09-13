@@ -1,11 +1,11 @@
 'use client'
 
 import clsx from 'clsx'
-import { useEffect } from 'react'
+
 import { UserProfile } from '@clerk/nextjs'
 import { useSettingsStore } from '@/store/zustand'
 
-export default function page() {
+export default function Page() {
   const { activeTab, setActiveTab } =
     useSettingsStore()
 
