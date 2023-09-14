@@ -1,4 +1,9 @@
+'use client'
+
 import clsx from 'clsx'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 interface SidebarItemProps {
   name: string
@@ -14,18 +19,26 @@ export default function SidebarItems({
   icon,
   items,
 }: SidebarItemProps) {
+  const pathname = usePathname()
+
+  const [isOpen, setOpen] = useState(true)
+
   return (
     <div>
       <button
+        onClick={() =>
+          setOpen((prevState) => !prevState)
+        }
         className={clsx(
-          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 dark:text-theme-soft-peach dark:hover:bg-sky-500 dark:focus:bg-sky-500'
-          // pathname === '/dashboard'
-          //   ? 'bg-blue-50/50 font-bold text-sky-500 dark:bg-sky-400'
-          //   : 'font-medium'
+          'mb-3 flex w-full items-center gap-1 rounded px-4 py-3 font-medium text-slate-700 transition-colors duration-200 hover:bg-gray-50 hover:text-slate-900 focus:bg-gray-50 dark:text-theme-soft-peach dark:hover:bg-sky-500 dark:focus:bg-sky-500 lg:leading-6',
+          isOpen
+            ? 'bg-blue-50/50 text-sky-500 dark:bg-sky-400'
+            : 'font-medium'
         )}
       >
         {icon === 'page' && (
           <svg
+            className='rounded border bg-white p-1 text-purple-400'
             xmlns='http://www.w3.org/2000/svg'
             width='24'
             height='24'
@@ -41,21 +54,14 @@ export default function SidebarItems({
               d='M0 0h24v24H0z'
               fill='none'
             ></path>
-            <path d='M20 20h.01'></path>
-            <path d='M4 20h.01'></path>
-            <path d='M8 20h.01'></path>
-            <path d='M12 20h.01'></path>
-            <path d='M16 20h.01'></path>
-            <path d='M20 4h.01'></path>
-            <path d='M4 4h.01'></path>
-            <path d='M8 4h.01'></path>
-            <path d='M12 4h.01'></path>
-            <path d='M16 4l0 .01'></path>
-            <path d='M4 8m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z'></path>
+            <path d='M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'></path>
+            <path d='M10 4l4 16'></path>
+            <path d='M12 12l-8 2'></path>
           </svg>
         )}
         {icon === 'elements' && (
           <svg
+            className='borer rounded  bg-white p-1 text-sky-400'
             xmlns='http://www.w3.org/2000/svg'
             width='24'
             height='24'
@@ -80,6 +86,7 @@ export default function SidebarItems({
         )}
         {icon === 'page-examples' && (
           <svg
+            className='rounded border bg-white p-1 text-fuchsia-400'
             xmlns='http://www.w3.org/2000/svg'
             width='24'
             height='24'
@@ -103,6 +110,22 @@ export default function SidebarItems({
         )}
         <span>{name}</span>
       </button>
+
+      {isOpen &&
+        items.map(({ name, href }) => (
+          <Link
+            key={name}
+            href={href}
+            className={clsx(
+              'my-2 flex items-center justify-between rounded px-5 py-1 transition-colors duration-200 ease-in-out hover:bg-blue-50/50 focus:bg-blue-50/50 dark:hover:bg-sky-500 dark:focus:bg-sky-500',
+              pathname === href
+                ? 'bg-blue-50/50 text-sky-500 dark:bg-sky-400/10 dark:text-sky-400'
+                : 'text-slate-700 hover:text-slate-900 dark:text-white'
+            )}
+          >
+            {name}
+          </Link>
+        ))}
     </div>
   )
 }
