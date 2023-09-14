@@ -1,7 +1,7 @@
-import SearchModal from './components/SearchModal'
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
-import SidebarNavbar from './components/SidebarNavbar'
+import SearchModal from '@/components/(dashboard)/SearchModal'
+import Navbar from '@/components/(dashboard)/Navbar'
+import Sidebar from '@/components/(dashboard)/Sidebar'
+import SidebarNavbar from '@/components/(dashboard)/SidebarNavbar'
 
 export default function DashboardLayout({
   children,
