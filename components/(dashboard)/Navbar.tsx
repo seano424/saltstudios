@@ -2,8 +2,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 import { League_Spartan } from 'next/font/google'
-
-import Toolbar from './Toolbar'
+import Toolbar from '@/components/(dashboard)/Toolbar'
 
 const leagueSpartan = League_Spartan({
   subsets: ['latin'],

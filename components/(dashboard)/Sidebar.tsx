@@ -1,5 +1,5 @@
 import { components } from '@/lib/database'
-import SidebarItems from '@/components/SidebarItems'
+import SidebarItems from '@/components/(dashboard)/SidebarItems'
 
 export default function Sidebar() {
   return (

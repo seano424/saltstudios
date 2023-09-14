@@ -5,9 +5,9 @@ import {
 } from '@clerk/nextjs'
 import Link from 'next/link'
 
-import ToolbarProfileButton from './ToolbarProfileButton'
-import SearchButton from './SearchButton'
-import DarkModeButton from './DarkModeButton'
+import ToolbarProfileButton from '@/components/(dashboard)/ToolbarProfileButton'
+import SearchButton from '@/components/(dashboard)/SearchButton'
+import DarkModeButton from '@/components/(dashboard)/DarkModeButton'
 
 export default function Toolbar() {
   return (
