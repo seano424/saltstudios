@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 interface SidebarItemProps {
   name: string
-  icon: 'page' | 'elements' | 'page-example'
+  icon: React.ReactNode
   items: {
     name: string
     href: string
@@ -41,9 +41,17 @@ export default function SidebarItems({
               d='M0 0h24v24H0z'
               fill='none'
             ></path>
-            <path d='M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'></path>
-            <path d='M10 4l4 16'></path>
-            <path d='M12 12l-8 2'></path>
+            <path d='M20 20h.01'></path>
+            <path d='M4 20h.01'></path>
+            <path d='M8 20h.01'></path>
+            <path d='M12 20h.01'></path>
+            <path d='M16 20h.01'></path>
+            <path d='M20 4h.01'></path>
+            <path d='M4 4h.01'></path>
+            <path d='M8 4h.01'></path>
+            <path d='M12 4h.01'></path>
+            <path d='M16 4l0 .01'></path>
+            <path d='M4 8m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z'></path>
           </svg>
         )}
         {icon === 'elements' && (
@@ -58,13 +66,19 @@ export default function SidebarItems({
             strokeLinecap='round'
             strokeLinejoin='round'
           >
-            <path d='M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z'></path>
-            <path d='M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2'></path>
-            <path d='M12 12l0 .01'></path>
-            <path d='M3 13a20 20 0 0 0 18 0'></path>
+            <path
+              stroke='none'
+              d='M0 0h24v24H0z'
+              fill='none'
+            ></path>
+            <path
+              d='M18 3a3 3 0 0 1 2.995 2.824l.005 .176v12a3 3 0 0 1 -2.824 2.995l-.176 .005h-12a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-12a3 3 0 0 1 2.824 -2.995l.176 -.005h12zm1 6h-14v9a1 1 0 0 0 .883 .993l.117 .007h12a1 1 0 0 0 .993 -.883l.007 -.117v-9z'
+              stroke-width='0'
+              fill='currentColor'
+            ></path>
           </svg>
         )}
-        {icon === 'page-example' && (
+        {icon === 'page-examples' && (
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -76,10 +90,15 @@ export default function SidebarItems({
             strokeLinecap='round'
             strokeLinejoin='round'
           >
-            <path d='M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z'></path>
-            <path d='M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2'></path>
-            <path d='M12 12l0 .01'></path>
-            <path d='M3 13a20 20 0 0 0 18 0'></path>
+            <path
+              stroke='none'
+              d='M0 0h24v24H0z'
+              fill='none'
+            ></path>
+            <path d='M4 4h6v8h-6z'></path>
+            <path d='M4 16h6v4h-6z'></path>
+            <path d='M14 12h6v8h-6z'></path>
+            <path d='M14 4h6v4h-6z'></path>
           </svg>
         )}
         <span>{name}</span>
