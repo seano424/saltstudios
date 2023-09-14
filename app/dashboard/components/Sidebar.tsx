@@ -6,16 +6,16 @@ import { usePathname } from 'next/navigation'
 
 const components = [
   {
-    name: 'Buttons',
-    href: '/dashboard/components/buttons',
-  },
-  {
     name: 'Headers',
     href: '/dashboard/components/headers',
   },
   {
     name: 'Hero Sections',
     href: '/dashboard/components/hero-sections',
+  },
+  {
+    name: 'Buttons',
+    href: '/dashboard/components/buttons',
   },
   {
     name: 'Services',
