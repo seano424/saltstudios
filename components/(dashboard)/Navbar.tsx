@@ -17,6 +17,7 @@ export default function Navbar() {
           href='/dashboard'
         >
           <Image
+            priority
             className='rounded-full dark:bg-white'
             src={'/images/logo.svg'}
             alt='Logo'
