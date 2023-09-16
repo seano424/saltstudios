@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const colors = require('tailwindcss/colors')
 
 const config: Config = {
   darkMode: 'class',
@@ -28,6 +29,9 @@ const config: Config = {
         'theme-pink': '#FF0096',
         'theme-dark': '#0f172acc',
         'theme-dark-10': '#1e293b',
+        primary: colors.indigo,
+        secondary: colors.rose,
+        neutral: colors.gray,
       },
     },
   },

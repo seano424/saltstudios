@@ -30,7 +30,7 @@ export default function ResizableIframe({
           height: window.innerHeight,
         })
         setMaxConstraints([600, 600])
-      } else if (window.innerWidth < 1600) {
+      } else if (window.innerWidth < 1500) {
         setState({
           width: 800,
           height: window.innerHeight,
@@ -69,30 +69,31 @@ export default function ResizableIframe({
     })
   }
   return (
-    <Resizable
-      maxConstraints={maxConstraints}
-      height={state.height}
-      width={state.width}
-      onResize={onResize}
-      onResizeStart={() => setIsResizing(true)}
-      onResizeStop={() => setIsResizing(false)}
-    >
-      <div className='relative h-[800px]'>
-        <div
-          className={clsx(
-            'absolute inset-0',
-            isResizing ? 'z-10' : 'z-0'
-          )}
-        ></div>
-        <iframe
-          style={{
-            width: state.width + 'px',
-          }}
-          className='relative h-full overflow-hidden rounded-lg ring-1 ring-slate-900/10'
-          sandbox='allow-scripts allow-same-origin'
-          src={src}
-        ></iframe>
-      </div>
-    </Resizable>
+    <div className='flex items-center justify-center'>
+      <Resizable
+        maxConstraints={maxConstraints}
+        height={state.height}
+        width={state.width}
+        onResize={onResize}
+        onResizeStart={() => setIsResizing(true)}
+        onResizeStop={() => setIsResizing(false)}
+      >
+        <div className='relative h-[800px]'>
+          <div
+            className={clsx(
+              'absolute inset-0',
+              isResizing ? 'z-10' : 'z-0'
+            )}
+          ></div>
+          <iframe
+            style={{
+              width: state.width + 'px',
+            }}
+            className='relative h-full overflow-hidden rounded-lg ring-1 ring-slate-900/10'
+            src={src}
+          ></iframe>
+        </div>
+      </Resizable>
+    </div>
   )
 }

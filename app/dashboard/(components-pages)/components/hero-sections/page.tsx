@@ -1,11 +1,11 @@
-const heroSections = [
-  {
-    name: '',
-    href: '',
-    public: true
-  },
-]
+import { heroSections } from '@/lib/database'
+import Showcase from '@/components/(dashboard)/Showcase'
 
 export default function HeroSections() {
-  return <div>Hero Sections!</div>
+  return (
+    <Showcase
+      name='Hero Sections'
+      sections={heroSections}
+    />
+  )
 }

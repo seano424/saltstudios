@@ -130,3 +130,11 @@ export const components = [
     ],
   },
 ]
+
+export const heroSections = [
+  {
+    name: 'Simple Centered',
+    href: '/components/hero/simple-centered',
+    publicComponent: false,
+  },
+]
