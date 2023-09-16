@@ -6,8 +6,10 @@ import { authMiddleware } from '@clerk/nextjs'
 export default authMiddleware({
   publicRoutes: [
     '/',
+    '/components',
     '/components/(.*)',
     '/dashboard',
+    '/dashboard/templates',
     '/dashboard/components',
     '/dashboard/components/(.*)',
   ],

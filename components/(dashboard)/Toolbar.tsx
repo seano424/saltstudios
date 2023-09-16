@@ -34,7 +34,7 @@ export default function Toolbar() {
             <SignedIn>
               <ToolbarProfileButton />
             </SignedIn>
-            <Link href='/components'>
+            <Link href='/dashboard/components'>
               Components
             </Link>
             <Link href='/dashboard/templates'>
