@@ -9,3 +9,14 @@
 .cl-card {
   @apply mx-0;
 }
+
+.react-resizable {
+  position: relative;
+}
+.react-resizable-handle {
+  @apply absolute inset-y-0 left-full ml-2 hidden cursor-ew-resize items-center sm:flex;
+}
+
+.react-resizable-handle {
+  @apply top-[300px] h-8 w-1.5 rounded-full bg-slate-400;
+}
