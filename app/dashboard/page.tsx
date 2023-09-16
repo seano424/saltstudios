@@ -29,10 +29,10 @@ export default function Dashboard() {
           style={{
             width: state.width + 'px',
           }}
-          className='h-[600px] border'
+          className='h-[600px] w-[600px] border'
         >
           <iframe
-            className='w-full'
+            className='w-full h-full'
             src='/dashboard/components/buttons'
           ></iframe>
         </div>
