@@ -1,4 +1,4 @@
-export const components = [
+export const componentsNavigation = [
   {
     name: 'Page Sections',
     icon: 'page',
