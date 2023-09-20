@@ -132,6 +132,13 @@ export default function Showcase({
             {activeTab === 'preview' && (
               <ResizableIframe src={href} />
             )}
+            {activeTab === 'code' && (
+              <div className='rounded-lg bg-gray-100 p-3'>
+                <pre className='text-xs'>
+                  <code>{href}</code>
+                </pre>
+              </div>
+            )}
           </div>
         )
       )}
