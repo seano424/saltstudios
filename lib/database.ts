@@ -1,4 +1,4 @@
-export const componentsNavigation = [
+export const data = [
   {
     name: 'Page Sections',
     icon: 'page',
@@ -6,6 +6,14 @@ export const componentsNavigation = [
       {
         name: 'Hero Sections',
         href: '/dashboard/components/hero-sections',
+        slug: 'hero-sections',
+        components: [
+          {
+            name: 'Simple Centered',
+            href: '/components/hero-sections/simple-centered',
+            publicComponent: false,
+          },
+        ],
       },
       {
         name: 'Header Sections',
@@ -128,13 +136,5 @@ export const componentsNavigation = [
         href: '/dashboard/components/404-pages',
       },
     ],
-  },
-]
-
-export const heroSections = [
-  {
-    name: 'Simple Centered',
-    href: '/components/hero-sections/simple-centered',
-    publicComponent: false,
   },
 ]
