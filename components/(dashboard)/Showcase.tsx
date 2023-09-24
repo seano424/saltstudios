@@ -14,6 +14,7 @@ interface ShowcaseProps {
     name: string
     href: string
     publicComponent: boolean
+    carbonUrl?: string
   }[]
   name: string
 }
@@ -35,7 +36,12 @@ export default function Showcase({
       </h4>
 
       {sections.map(
-        ({ name, href, publicComponent }) => (
+        ({
+          name,
+          href,
+          publicComponent,
+          carbonUrl,
+        }) => (
           <div key={href}>
             <div className='mb-3 flex items-center justify-between'>
               <h5>{name}</h5>
@@ -133,10 +139,17 @@ export default function Showcase({
               <ResizableIframe src={href} />
             )}
             {activeTab === 'code' && (
-              <div className='rounded-lg bg-gray-100 p-3'>
-                <pre className='text-xs'>
-                  <code>{href}</code>
-                </pre>
+              <div className='flex w-full justify-center'>
+                <iframe
+                  src={carbonUrl}
+                  style={{
+                    border: 0,
+                    transform: 'scale(1)',
+                    overflow: 'hidden',
+                  }}
+                  sandbox='allow-scripts allow-same-origin'
+                  className='relative h-[750px] w-11/12 overflow-hidden rounded-lg bg-black ring-1 ring-slate-900/10'
+                ></iframe>
               </div>
             )}
           </div>

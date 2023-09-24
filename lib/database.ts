@@ -12,6 +12,8 @@ export const data = [
             name: 'Simple Centered',
             href: '/components/hero-sections/simple-centered',
             publicComponent: false,
+            carbonUrl:
+              'https://carbon.now.sh/embed/5ayX8WfsB351OL3whFGA',
           },
         ],
       },

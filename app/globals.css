@@ -20,3 +20,7 @@
 .react-resizable-handle {
   @apply top-[300px] h-8 w-1.5 rounded-full bg-slate-400;
 }
+
+.container-bg {
+  @apply hidden;
+}
