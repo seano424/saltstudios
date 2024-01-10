@@ -30,10 +30,10 @@ export default function SidebarItems({
           setOpen((prevState) => !prevState)
         }
         className={clsx(
-          'mb-3 flex w-full items-center gap-1 rounded px-4 py-3 font-medium text-slate-700 transition-colors duration-200 hover:bg-gray-50 hover:text-slate-900 focus:bg-gray-50 dark:text-theme-soft-peach dark:hover:bg-sky-500 dark:focus:bg-sky-500 lg:leading-6',
+          'mb-3 flex w-full items-center gap-1 rounded px-4 py-3 font-medium transition-colors duration-200 hover:text-slate-900 dark:text-theme-soft-peach dark:hover:bg-sky-500 lg:leading-6',
           isOpen
-            ? 'bg-blue-50/50 text-sky-500 dark:bg-sky-400'
-            : 'font-medium'
+            ? 'text-sky-500 dark:bg-sky-500 font-bold'
+            : 'font-medium text-slate-700 hover:bg-sky-100'
         )}
       >
         {icon === 'page' && (
@@ -117,10 +117,10 @@ export default function SidebarItems({
             key={name}
             href={href}
             className={clsx(
-              'my-2 flex items-center justify-between rounded px-5 py-1 transition-colors duration-200 ease-in-out hover:bg-blue-50/50 focus:bg-blue-50/50 dark:hover:bg-sky-500 dark:focus:bg-sky-500',
+              'my-2 flex items-center justify-between rounded px-5 py-1 transition-colors duration-200 ease-in-out dark:hover:bg-sky-400/20',
               pathname === href
-                ? 'bg-blue-50/50 text-sky-500 dark:bg-sky-400/10 dark:text-sky-400'
-                : 'text-slate-700 hover:text-slate-900 dark:text-white'
+                ? 'bg-sky-50 dark:bg-sky-400/10 dark:text-sky-500'
+                : 'text-slate-700 hover:bg-sky-50 hover:text-slate-900 dark:text-sky-500'
             )}
           >
             {name}

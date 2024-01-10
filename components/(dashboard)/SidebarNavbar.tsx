@@ -12,9 +12,9 @@ export default function SidebarNavbar() {
       <Link
         href={'/dashboard'}
         className={clsx(
-          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 dark:text-theme-soft-peach dark:hover:bg-sky-500 dark:focus:bg-sky-500',
+          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 hover:bg-gray-50 dark:text-theme-soft-peach dark:hover:bg-sky-500',
           pathname === '/dashboard'
-            ? 'bg-blue-50/50 font-bold text-sky-500 dark:bg-sky-400'
+            ? 'bg-blue-50/50 font-bold text-sky-500 dark:bg-sky-500'
             : 'font-medium'
         )}
       >
@@ -43,10 +43,10 @@ export default function SidebarNavbar() {
       <Link
         href={'/dashboard/saved-components'}
         className={clsx(
-          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 dark:text-theme-soft-peach dark:hover:bg-sky-500 dark:focus:bg-sky-500',
+          'flex items-center gap-1 rounded px-4 py-3 transition-colors duration-200 hover:bg-gray-50  dark:text-theme-soft-peach dark:hover:bg-sky-500',
           pathname ===
             '/dashboard/saved-components'
-            ? 'bg-blue-50/50 font-bold text-sky-500 dark:bg-sky-400'
+            ? 'bg-blue-50/50 font-bold text-sky-500 dark:bg-sky-500'
             : 'font-medium'
         )}
       >

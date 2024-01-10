@@ -29,6 +29,8 @@ const config: Config = {
         'theme-pink': '#FF0096',
         'theme-dark': '#0f172acc',
         'theme-dark-10': '#1e293b',
+        'theme-dark-blue':
+          'rgb(239 246 255 / 0.1)',
         primary: colors.indigo,
         secondary: colors.rose,
         neutral: colors.gray,
