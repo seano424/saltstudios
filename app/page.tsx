@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className='min-h-screen'>
-      I am the home page
+      <h2>I am the home page</h2>
     </main>
   )
 }
